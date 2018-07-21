@@ -7,3 +7,5 @@ client/node_modules
 npm-debug.log
 .idea
 .git
+.vs
+*.sln
