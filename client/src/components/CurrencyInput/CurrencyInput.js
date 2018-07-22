@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import './CurrencyInput.css'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import './CurrencyInput.css';
 
 export default class CurrencyInput extends Component {
 	constructor(props) {
@@ -42,4 +42,8 @@ export default class CurrencyInput extends Component {
 
 CurrencyInput.propTypes = {
     defaultValue: PropTypes.number
+};
+
+CurrencyInput.defaultProps = {
+    defaultValue: 0
 };

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import './SliderInput.css'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import './SliderInput.css';
 
 export default class SliderInput extends Component {
 	constructor(props) {
@@ -36,4 +36,8 @@ export default class SliderInput extends Component {
 
 SliderInput.propTypes = {
     defaultValue: PropTypes.number
+};
+
+SliderInput.defaultProps = {
+    defaultValue: 0
 };

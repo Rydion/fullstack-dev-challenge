@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CurrencyInput from './components/CurrencyInput'
-import SliderInput from './components/SliderInput'
-import DisplayGraph from './components/DisplayGraph'
+import CurrencyInput from './components/CurrencyInput/CurrencyInput';
+import SliderInput from './components/SliderInput/SliderInput';
+import DisplayGraph from './components/DisplayGraph/DisplayGraph';
 import './App.css';
 
 class App extends Component {
@@ -13,13 +13,13 @@ class App extends Component {
                 </div>
                 <div className="financial-inputs">
                     <p className="input-label">How much have you saved?</p>
-                    <CurrencyInput defaultValue={0} />
+                    <CurrencyInput />
 
                     <p className="input-label">How much will you save each month?</p>
-                    <CurrencyInput defaultValue={0} />
+                    <CurrencyInput />
 
                     <p className="input-label">How much interest will you earn per year?</p>
-                    <SliderInput defaultValue={4} />
+                    <SliderInput />
                 </div>
                 <div className="financial-display">
                     {/*We have included some sample data here, you will need to replace this
