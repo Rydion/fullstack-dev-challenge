@@ -1,0 +1,18 @@
+p {
+	font-family: 'Avenir Next', 'Avenir', 'Lato', 'Helvetica', 'Arial', 'Sans-Serif';
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	color: #1D1F20;
+}
+
+.financial-inputs {
+	padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.input-label {
+	margin-bottom: 4px;
+	margin-top: 12px;
+}

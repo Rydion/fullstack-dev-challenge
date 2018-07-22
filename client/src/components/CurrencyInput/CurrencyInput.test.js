@@ -23,4 +23,11 @@ describe('CurrencyInput', function () {
         currencyInputComponent.find('input').simulate('change', { target: { value: 10 }});
         expect(currencyInputComponent.state().value).toEqual(10);
     });
+
+    it('the onUpdate callback is correctly executed', () => {
+        const stub = jest.fn();
+        const currencyInputComponent = shallow(<CurrencyInput onUpdate={stub} />);
+        currencyInputComponent.find('input').simulate('change', { target: { value: 10 } });
+        expect(stub).toHaveBeenCalledWith(10);
+    });
 });

@@ -29,14 +29,6 @@ h4 {
 	line-height: 18px;
 }
 
-p {
-	font-family: 'Avenir Next', 'Avenir', 'Lato', 'Helvetica', 'Arial', 'Sans-Serif';
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 20px;
-	color: #1D1F20;
-}
-
 .fmz-white-font {
 	color: #ffffff;
 }
@@ -44,13 +36,4 @@ p {
 .header-banner {
 	background-color: #00b2ff;
 	padding: 20px;
-}
-
-.financial-inputs {
-	padding: 20px;
-}
-
-.input-label {
-	margin-bottom: 4px;
-	margin-top: 12px;
 }

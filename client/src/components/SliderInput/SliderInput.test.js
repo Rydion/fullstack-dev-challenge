@@ -23,4 +23,11 @@ describe('SliderInput', function () {
         sliderInputComponent.find('input').simulate('change', { target: { value: 10 } });
         expect(sliderInputComponent.state().value).toEqual(10);
     });
+
+    it('the onUpdate callback is correctly executed', () => {
+        const stub = jest.fn();
+        const sliderInputComponent = shallow(<SliderInput onUpdate={stub} />);
+        sliderInputComponent.find('input').simulate('change', { target: { value: 10 } });
+        expect(stub).toHaveBeenCalledWith(10);
+    });
 });
