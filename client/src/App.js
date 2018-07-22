@@ -4,7 +4,7 @@ import SliderInput from './components/SliderInput/SliderInput';
 import DisplayGraph from './components/DisplayGraph/DisplayGraph';
 import './App.css';
 
-class App extends Component {
+export default class App extends Component {
     render() {
         return (
             <div className="App">
@@ -47,5 +47,3 @@ class App extends Component {
         );
     }
 }
-
-export default App;

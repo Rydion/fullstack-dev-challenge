@@ -1,10 +1,11 @@
 import express from 'express';
+import cors from 'cors';
 import expressGraphql from 'express-graphql';
 import schema from './graphql/schema';
 
 const app = express();
 
-app.use('/api', expressGraphql({
+app.use('/api', cors(), expressGraphql({
     schema,
     graphiql: false
 }));
