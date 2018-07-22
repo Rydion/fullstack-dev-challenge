@@ -17,4 +17,10 @@ describe('CurrencyInput', function () {
         const currencyInputComponent = shallow(<CurrencyInput defaultValue={10} />);
         expect(currencyInputComponent.state().value).toEqual(10);
     });
+
+    it('the value is updated correctly onChange', () => {
+        const currencyInputComponent = shallow(<CurrencyInput />);
+        currencyInputComponent.find('input').simulate('change', { target: { value: 10 }});
+        expect(currencyInputComponent.state().value).toEqual(10);
+    });
 });

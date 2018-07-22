@@ -17,4 +17,10 @@ describe('SliderInput', function () {
         const sliderInputComponent = shallow(<SliderInput defaultValue={10} />);
         expect(sliderInputComponent.state().value).toEqual(10);
     });
+
+    it('the value is updated correctly onChange', () => {
+        const sliderInputComponent = shallow(<SliderInput />);
+        sliderInputComponent.find('input').simulate('change', { target: { value: 10 } });
+        expect(sliderInputComponent.state().value).toEqual(10);
+    });
 });
