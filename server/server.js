@@ -1,6 +1,13 @@
 import express from 'express';
+import expressGraphql from 'express-graphql';
+import schema from './graphql/schema';
 
 const app = express();
+
+app.use('/api', expressGraphql({
+    schema,
+    graphiql: false
+}));
 
 app.set('port', (process.env.PORT || 3001));
 
