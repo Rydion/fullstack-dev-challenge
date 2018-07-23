@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import CurrencyInput from './CurrencyInput';
 
-describe('CurrencyInput', function () {
+describe('CurrencyInput', () => {
     it('renders without crashing', () => {
         // For components we render only the component itself
         const currencyInputComponent = shallow(<CurrencyInput />);

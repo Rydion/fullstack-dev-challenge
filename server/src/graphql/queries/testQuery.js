@@ -3,7 +3,7 @@
     GraphQLNonNull,
     GraphQLFloat
 } from 'graphql';
-import testType from '../types/test';
+import testType from '../types/testType';
 
 export default {
     test: {

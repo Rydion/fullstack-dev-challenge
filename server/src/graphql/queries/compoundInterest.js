@@ -4,6 +4,7 @@
     GraphQLFloat
 } from 'graphql';
 import compoundInterestType from '../types/compoundInterest';
+import { calculateMonthlyCompoundInterest } from '../../utils/interest/interest';
 
 export default {
     compoundInterest: {
@@ -23,10 +24,12 @@ export default {
             }
         },
         resolve: (root, { initialSavings, monthlySavings, interestRate }) => {
-            // TODO
+            const numberOfMonths = 50*12; // 50 years, 12 months each
+            const monthlyCompoundInterest = calculateMonthlyCompoundInterest(initialSavings, monthlySavings, interestRate, numberOfMonths);
             return {
                 granularity: 'monthly',
-                values: [{ time: 1, amount: initialSavings }, { time: 2, amount: 20 }]
+                // Format the output correctly
+                values: monthlyCompoundInterest.map((a, i) => ({time: i, amount: a}))
             };
         }
     }
