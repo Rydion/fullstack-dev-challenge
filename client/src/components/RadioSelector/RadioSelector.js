@@ -35,6 +35,7 @@ export default class RadioSelector extends Component {
                                     name={radioId + ''}
                                     value={option.value}
                                     onChange={this.handleChange.bind(this)}
+                                    defaultChecked={index === 0}
                                 />
                                 <label>{option.label}</label>
                             </div>

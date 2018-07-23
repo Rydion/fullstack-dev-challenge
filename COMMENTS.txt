@@ -1,0 +1,4 @@
+﻿Tests implemented with Jest both in client (+ enzyme) and server. TDD approach. I have not created tests for everything to save time.
+Used GraphQL for client-server communication. Implemented the GraphQL server in a way that allows the API to be expanded easily in the future. See root query.
+I have added comments about sanity checks but not implemented them as they are straightforward. This produces an error when the client inputs have a NaN value,
+obviously this would be solved by checks both in the client before sending the request out and in the backend with the previously mentioned sanity checks.

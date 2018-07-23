@@ -31,11 +31,18 @@ export default class CompoundInterestGraph extends Component {
             interestFrequency: 1
         };
     }
-
+    /*
     handleValueUpdate(propName, value) {
+        console.log('a');
         const parsedValue = parseFloat(value);
         this.setState({ [propName]: parsedValue });
     }
+    */
+    handleValueUpdate = debounce((propName, value) => {
+        console.log('a');
+        const parsedValue = parseFloat(value);
+        this.setState({ [propName]: parsedValue });
+    }, 200);
 
     render() {
         const { initialSavings, monthlySavings, interestRate, interestFrequency } = this.state;
@@ -59,7 +66,7 @@ export default class CompoundInterestGraph extends Component {
                     <p className="input-label">How much interest will you earn per year?</p>
                     <SliderInput defaultValue={this.state.interestRate}
                         propName={'interestRate'}
-                        onUpdate={debounce(this.handleValueUpdate.bind(this), 100)}
+                        onUpdate={this.handleValueUpdate.bind(this)}
                     />
                 </div>
                 <div className="financial-inputs">
