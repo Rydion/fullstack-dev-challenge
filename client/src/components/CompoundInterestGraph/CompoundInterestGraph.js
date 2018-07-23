@@ -5,17 +5,30 @@ import debounce from 'debounce';
 import CurrencyInput from '../CurrencyInput/CurrencyInput';
 import SliderInput from '../SliderInput/SliderInput';
 import DisplayGraph from '../DisplayGraph/DisplayGraph';
-import getCompoundInterestQuery from '../../graphql/queries/compoundInterestQuery';
+import RadioSelector from '../RadioSelector/RadioSelector';
+import getCompoundInterestQuery from '../../graphql/queries/compoundInterest';
 import './CompoundInterestGraph.css';
 
 export default class CompoundInterestGraph extends Component {
     constructor(props) {
         super(props);
 
+        this.interestFrequencyOptions = [{
+            label: 'Monthly',
+            value: 1
+        }, {
+            label: 'Quarterly',
+            value: 3
+        }, {
+            label: 'Yearly',
+            value: 12
+        }];
+
         this.state = {
             initialSavings: 0,
             monthlySavings: 0,
-            interestRate: 0
+            interestRate: 0,
+            interestFrequency: 1
         };
     }
 
@@ -25,8 +38,8 @@ export default class CompoundInterestGraph extends Component {
     }
 
     render() {
-        const { initialSavings, monthlySavings, interestRate } = this.state;
-        const compoundInterestQuery = getCompoundInterestQuery(initialSavings, monthlySavings, interestRate);
+        const { initialSavings, monthlySavings, interestRate, interestFrequency } = this.state;
+        const compoundInterestQuery = getCompoundInterestQuery(initialSavings, monthlySavings, interestRate, interestFrequency);
 
         return (
             <div>
@@ -49,6 +62,13 @@ export default class CompoundInterestGraph extends Component {
                         onUpdate={debounce(this.handleValueUpdate.bind(this), 100)}
                     />
                 </div>
+                <div className="financial-inputs">
+                    <p className="input-label">How often will the interest be paid?</p>
+                    <RadioSelector options={this.interestFrequencyOptions}
+                        propName={'interestFrequency'}
+                        onUpdate={this.handleValueUpdate.bind(this)}
+                    />
+                </div>
                 <Query query={compoundInterestQuery}>
                     {({ loading, error, data }) => {
                         if (error) {
@@ -59,9 +79,11 @@ export default class CompoundInterestGraph extends Component {
                             return <div>No data available</div>;
                         }
 
-                        return <div className="financial-display">
-                                   <DisplayGraph data={data.compoundInterest.values} />
-                               </div>;
+                        return (
+                            <div className="financial-display">
+                               <DisplayGraph data={data.compoundInterest.values} />
+                            </div>
+                        );
                     }}
                 </Query>
             </div>
