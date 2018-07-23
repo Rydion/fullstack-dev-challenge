@@ -16,7 +16,7 @@ export default class CurrencyInput extends Component {
         const value = e.target.value;
         this.setState({ value });
         if (this.props.onUpdate) {
-            this.props.onUpdate(value);
+            this.props.onUpdate(this.props.propName, value);
         }
 	}
 
@@ -45,6 +45,7 @@ export default class CurrencyInput extends Component {
 
 CurrencyInput.propTypes = {
     defaultValue: PropTypes.number,
+    propName: PropTypes.string,
     onUpdate: PropTypes.func
 };
 

@@ -13,7 +13,7 @@ describe('CurrencyInput', function () {
         expect(currencyInputComponent.state().value).toEqual(0);
     });
 
-    it('the default value can be changed by using the initialValue property', () => {
+    it('the default value can be changed by using the defaultValue property', () => {
         const currencyInputComponent = shallow(<CurrencyInput defaultValue={10} />);
         expect(currencyInputComponent.state().value).toEqual(10);
     });
@@ -26,8 +26,8 @@ describe('CurrencyInput', function () {
 
     it('the onUpdate callback is correctly executed', () => {
         const stub = jest.fn();
-        const currencyInputComponent = shallow(<CurrencyInput onUpdate={stub} />);
+        const currencyInputComponent = shallow(<CurrencyInput propName={'test'} onUpdate={stub} />);
         currencyInputComponent.find('input').simulate('change', { target: { value: 10 } });
-        expect(stub).toHaveBeenCalledWith(10);
+        expect(stub).toHaveBeenCalledWith('test', 10);
     });
 });

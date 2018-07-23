@@ -4,8 +4,8 @@
     GraphQLString,
     GraphQLObjectType
 } from 'graphql';
-import compoundInterestQuery from './queries/getCompoundInterest';
+import rootQuery from './queries/root';
 
 export default new GraphQLSchema({
-    query: compoundInterestQuery
+    query: rootQuery
 });

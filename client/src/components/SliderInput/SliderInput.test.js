@@ -13,7 +13,7 @@ describe('SliderInput', function () {
         expect(sliderInputComponent.state().value).toEqual(0);
     });
 
-    it('the default value can be changed by using the initialValue property', () => {
+    it('the default value can be changed by using the defaultValue property', () => {
         const sliderInputComponent = shallow(<SliderInput defaultValue={10} />);
         expect(sliderInputComponent.state().value).toEqual(10);
     });
@@ -26,8 +26,8 @@ describe('SliderInput', function () {
 
     it('the onUpdate callback is correctly executed', () => {
         const stub = jest.fn();
-        const sliderInputComponent = shallow(<SliderInput onUpdate={stub} />);
+        const sliderInputComponent = shallow(<SliderInput propName={'test'} onUpdate={stub} />);
         sliderInputComponent.find('input').simulate('change', { target: { value: 10 } });
-        expect(stub).toHaveBeenCalledWith(10);
+        expect(stub).toHaveBeenCalledWith('test', 10);
     });
 });
