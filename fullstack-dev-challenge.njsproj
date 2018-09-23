@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2e944491-8e9d-4266-a7b2-299943923ff6}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>server.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Compile Include="client\src\components\CompoundInterestGraph\CompoundInterestGraph.js" />
+    <Compile Include="client\src\components\RadioSelector\RadioSelector.js" />
+    <Compile Include="client\src\graphql\client.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="client\src\graphql\queries\compoundInterest.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="scripts\start-server.js" />
+    <Compile Include="server\jest.config.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="server\src\graphql\queries\compoundInterest.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="server\src\graphql\queries\root.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="server\src\graphql\queries\testQuery.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="server\src\graphql\schema.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="server\src\graphql\types\testType.js" />
+    <Compile Include="server\src\graphql\types\compoundInterest.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="server\src\server.js" />
+    <Compile Include="server\src\utils\interest\interest.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="server\src\utils\interest\interest.test.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include=".gitignore" />
+    <Content Include="client\.gitignore" />
+    <Content Include="client\src\components\CompoundInterestGraph\CompoundInterestGraph.css" />
+    <Content Include="client\yarn.lock" />
+    <Content Include="COMMENTS.txt">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Compile Include="client\src\components\CurrencyInput\CurrencyInput.test.js" />
+    <Compile Include="client\src\components\SliderInput\SliderInput.test.js" />
+    <Compile Include="client\src\setupTests.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="client\favicon.ico" />
+    <Content Include="client\package.json" />
+    <Content Include="client\README.md" />
+    <Compile Include="scripts\start-client.js" />
+    <Content Include="client\public\index.html" />
+    <Content Include="client\public\favicon.ico" />
+    <Content Include="client\public\manifest.json" />
+    <Content Include="client\src\App.css" />
+    <Content Include="client\src\index.css" />
+    <Compile Include="client\src\App.js" />
+    <Compile Include="client\src\App.test.js" />
+    <Compile Include="client\src\index.js" />
+    <Content Include="client\src\components\CurrencyInput\CurrencyInput.css" />
+    <Content Include="client\src\components\SliderInput\SliderInput.css" />
+    <Compile Include="client\src\components\CurrencyInput\CurrencyInput.js" />
+    <Compile Include="client\src\components\DisplayGraph\DisplayGraph.js" />
+    <Compile Include="client\src\components\SliderInput\SliderInput.js" />
+    <Content Include="server\.babelrc">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="server\.gitignore" />
+    <Content Include="server\package.json" />
+    <Content Include="server\yarn.lock" />
+    <Content Include="yarn.lock" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="client" />
+    <Folder Include="client\public" />
+    <Folder Include="client\src" />
+    <Folder Include="client\src\components" />
+    <Folder Include="client\src\components\CurrencyInput\" />
+    <Folder Include="client\src\components\DisplayGraph\" />
+    <Folder Include="client\src\components\CompoundInterestGraph\" />
+    <Folder Include="client\src\components\RadioSelector\" />
+    <Folder Include="client\src\components\SliderInput\" />
+    <Folder Include="client\src\graphql\" />
+    <Folder Include="client\src\graphql\queries\" />
+    <Folder Include="scripts" />
+    <Folder Include="server\" />
+    <Folder Include="server\src\graphql\" />
+    <Folder Include="server\src\graphql\types\" />
+    <Folder Include="server\src\graphql\queries\" />
+    <Folder Include="server\src\" />
+    <Folder Include="server\src\utils\" />
+    <Folder Include="server\src\utils\interest\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
